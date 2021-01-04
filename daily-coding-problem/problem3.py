@@ -29,7 +29,7 @@ class Node:
         q.put(self)
         while(not q.empty()):
             current = q.get()
-            if current == None:
+            if current == None or current.val == 'n':
                 bfs_list.append('n')
                 continue
             bfs_list.append(current.val)
@@ -41,16 +41,18 @@ class Node:
             return None            
         q = Queue()
         j = 1
+        i = 0
         tree = Node(l[0])
         q.put(tree)
         while(not q.empty()):
             current = q.get()
             if(current == None or current.val == 'n'):
                 continue
-            if j < (len(l) - 1) /2:
+            if j < (len(l)/2 ):
                 left = Node(l[j])
                 j += 1
                 right = Node(l[j])
+                j += 1
             else:
                 left = None
                 right = None
@@ -63,7 +65,7 @@ class Node:
 tree = Node('root', Node('l', Node('ll')), Node('r'))
 print(tree.serialize())
 print(tree.deserialize(tree.serialize()).serialize())
-#assert tree.deserialize(tree.serialize()).left.left.val == 'l.l'
+assert tree.deserialize(tree.serialize()).left.left.val == 'll'
 
 
 
