@@ -41,7 +41,6 @@ class Node:
             return None            
         q = Queue()
         j = 1
-        i = 0
         tree = Node(l[0])
         q.put(tree)
         while(not q.empty()):
