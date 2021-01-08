@@ -19,6 +19,31 @@ import (
 	"fmt"
 )
 
-func main() {
+func cons(a int, b int) func(func(int, int) int) int {
+	pair := func(f func(int, int) int) int {
+		return f(a, b)
+	}
+	return pair
+}
 
+func car(f func(func(int, int) int) int) int {
+	first := func(a int, b int) int {
+		return a
+	}
+	return f(first)
+}
+
+func cdr(f func(func(int, int) int) int) int {
+	second := func(a int, b int) int {
+		return b
+	}
+	return f(second)
+}
+func main() {
+	pair := cons(a, b)
+	first := car(pair)
+	second := cdr(pair)
+	fmt.Println(pair)
+	fmt.Println(first)
+	fmt.Println(second)
 }
