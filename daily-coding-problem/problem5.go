@@ -40,7 +40,7 @@ func cdr(f func(func(int, int) int) int) int {
 	return f(second)
 }
 func main() {
-	pair := cons(a, b)
+	pair := cons(10, 9)
 	first := car(pair)
 	second := cdr(pair)
 	fmt.Println(pair)
