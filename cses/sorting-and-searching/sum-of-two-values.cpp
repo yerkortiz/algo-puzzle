@@ -11,8 +11,7 @@ typedef std::vector<pr_t> vctr_t;
 bool compare(const std::pair<int, int>&i, const std::pair<int, int>&j) {
     return i.second < j.second;
 }
-int main(void)
-{
+int main(void) {
     int n, sum, i, j, k; std::cin >> n >> sum;
     bool solution = false;
     vctr_t v(n);
