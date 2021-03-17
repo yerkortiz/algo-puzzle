@@ -1,6 +1,10 @@
 package main
 
-import "github.com/yerkortiz/programs"
+import (
+	"os"
+
+	"github.com/yerkortiz/programs"
+)
 
 func main() {
 	//programs.Hello("world!")
@@ -9,4 +13,5 @@ func main() {
 	//fmt.Println(programs.EchoV3(os.Args[1:]))
 	files := []string{"asdas.txt"}
 	programs.Dup2(files)
+	programs.Lissajous(os.Stdout)
 }
