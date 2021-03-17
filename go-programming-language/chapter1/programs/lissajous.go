@@ -1,3 +1,7 @@
+/*
+task 1: change palette to green on black
+task 2: more colors
+*/
 package programs
 
 import (
@@ -9,7 +13,7 @@ import (
 	"math/rand"
 )
 
-var palette = []color.Color{color.White, color.Black}
+var palette = []color.Color{color.RGBA{255, 0, 0, 255}, color.Black}
 
 const (
 	whiteIndex = 0 // first color in palette
